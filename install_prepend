@@ -1,1 +1,2 @@
 mkdir -p %{buildroot}/usr/lib64
+mkdir -p %{buildroot}/usr/include

@@ -7,7 +7,7 @@
 #
 Name     : QAT-ZSTD-Plugin
 Version  : 0.1.0
-Release  : 1
+Release  : 2
 URL      : https://github.com/intel/QAT-ZSTD-Plugin/archive/refs/tags/v0.1.0.tar.gz
 Source0  : https://github.com/intel/QAT-ZSTD-Plugin/archive/refs/tags/v0.1.0.tar.gz
 Summary  : No detailed summary available
@@ -53,7 +53,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1698245594
+export SOURCE_DATE_EPOCH=1698246521
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -86,10 +86,11 @@ FFLAGS="$CLEAR_INTERMEDIATE_FFLAGS"
 FCFLAGS="$CLEAR_INTERMEDIATE_FCFLAGS"
 ASFLAGS="$CLEAR_INTERMEDIATE_ASFLAGS"
 LDFLAGS="$CLEAR_INTERMEDIATE_LDFLAGS"
-export SOURCE_DATE_EPOCH=1698245594
+export SOURCE_DATE_EPOCH=1698246521
 rm -rf %{buildroot}
 ## install_prepend content
 mkdir -p %{buildroot}/usr/lib64
+mkdir -p %{buildroot}/usr/include
 ## install_prepend end
 mkdir -p %{buildroot}/usr/share/package-licenses/QAT-ZSTD-Plugin
 cp %{_builddir}/QAT-ZSTD-Plugin-%{version}/LICENSE %{buildroot}/usr/share/package-licenses/QAT-ZSTD-Plugin/86f5b7fd53ceeabe1645051a6bb84415e1fdaeef || :
@@ -101,10 +102,10 @@ INSTALLDIR=/usr
 
 %files
 %defattr(-,root,root,-)
-/usr/include
 
 %files dev
 %defattr(-,root,root,-)
+/usr/include/qatseqprod.h
 /usr/lib64/libqatseqprod.so
 
 %files license
