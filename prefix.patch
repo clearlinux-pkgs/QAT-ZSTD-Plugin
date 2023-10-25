@@ -1,0 +1,55 @@
+--- QAT-ZSTD-Plugin-0.1.0/src/Makefile~	2023-09-08 06:28:04.000000000 +0000
++++ QAT-ZSTD-Plugin-0.1.0/src/Makefile	2023-10-25 14:29:13.918161580 +0000
+@@ -36,7 +36,7 @@
+ .PHONY: default
+ default: lib
+ 
+-INSTALLDIR ?= /usr/local
++INSTALLDIR ?= /usr
+ LIBDIR     ?= $(INSTALLDIR)/lib
+ INCLUDEDIR ?= $(INSTALLDIR)/include
+ 
+--- QAT-ZSTD-Plugin-0.1.0/src/Makefile~	2023-10-25 14:29:13.000000000 +0000
++++ QAT-ZSTD-Plugin-0.1.0/src/Makefile	2023-10-25 14:31:12.467425561 +0000
+@@ -37,7 +37,7 @@
+ default: lib
+ 
+ INSTALLDIR ?= /usr
+-LIBDIR     ?= $(INSTALLDIR)/lib
++LIBDIR     ?= $(INSTALLDIR)/lib64
+ INCLUDEDIR ?= $(INSTALLDIR)/include
+ 
+ CP ?= cp
+--- QAT-ZSTD-Plugin-0.1.0/src/Makefile~	2023-10-25 14:31:12.000000000 +0000
++++ QAT-ZSTD-Plugin-0.1.0/src/Makefile	2023-10-25 14:31:39.302257408 +0000
+@@ -36,7 +36,7 @@
+ .PHONY: default
+ default: lib
+ 
+-INSTALLDIR ?= /usr
++INSTALLDIR ?= $(PREFIX)/usr
+ LIBDIR     ?= $(INSTALLDIR)/lib64
+ INCLUDEDIR ?= $(INSTALLDIR)/include
+ 
+--- QAT-ZSTD-Plugin-0.1.0/Makefile~	2023-09-08 06:28:04.000000000 +0000
++++ QAT-ZSTD-Plugin-0.1.0/Makefile	2023-10-25 14:49:13.698420139 +0000
+@@ -53,7 +53,7 @@
+ 
+ .PHONY: install
+ install:
+-	$(Q)$(MAKE) -C $(LIBDIR) $@
++	$(Q)$(MAKE) -C $(LIBDIR) DESTDIR=$(DESTDIR) $@
+ 
+ .PHONY: uninstall
+ uninstall:
+--- QAT-ZSTD-Plugin-0.1.0/src/Makefile~	2023-10-25 14:31:39.000000000 +0000
++++ QAT-ZSTD-Plugin-0.1.0/src/Makefile	2023-10-25 14:52:00.983316326 +0000
+@@ -36,7 +36,7 @@
+ .PHONY: default
+ default: lib
+ 
+-INSTALLDIR ?= $(PREFIX)/usr
++INSTALLDIR ?= $(DESTDIR)/usr
+ LIBDIR     ?= $(INSTALLDIR)/lib64
+ INCLUDEDIR ?= $(INSTALLDIR)/include
+ 
